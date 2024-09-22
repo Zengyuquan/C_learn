@@ -1,2 +1,5 @@
 
 *.exe
+*.log
+*.obj
+/cmake-build-debug
