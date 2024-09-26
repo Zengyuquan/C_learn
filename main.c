@@ -2,14 +2,12 @@
 
 int main() {
 
-    int arr[5] = {0};
-    int len = sizeof(arr) / sizeof(arr[0]);
+    int* p1, *p2, m, n;
 
-    // 键盘录入数据
-    for (int i = 0; i < len; i++) {
-        printf("请录入第%d个元素\n", i + 1);
-        scanf("%d", &arr[i]);
-    }
+    p1 = &m;p2 = &p1;
+    p1=&m; p2=p1 ;
+    p1=&m; p2=&n;*p1=*p2 ;
+    p1=&m; *p1=*p2;
 
     return 0;
 }
