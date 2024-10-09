@@ -1,41 +1,35 @@
-#include "stdio.h"
+#include <stdio.h>
 
-void printArr();
+int main() {
 
-int main(){
-
-    // 定义数组
-    int arr[5] = {0};
-    int len = sizeof(arr) / sizeof(arr[0]);
-
-    // 键盘录入数据
-    for (int i = 0; i < len; i++) {
-        scanf("%d", &arr[i]);
+    int n = 0;
+    if(scanf("%d", &n) != 1)
+    {
+        printf("输入无效，请输入一个整数\n");
+        return 1;
     }
 
-    // 调用函数
-    printArr(arr, len);
-
-    int i = 0;
-    int j = len -1;
-    while (i < j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-
-        i++;
-        j--;
+    if(n<3 || n > 10)
+    {
+        printf("输入的整数不在范围内!");
+        return 1;
     }
 
-    printArr(arr, len);
+    int numArr[n];
+    for (int i = 0; i < n; i++) {
+        if(scanf("%d", &numArr[i]) != 1)
+        {
+            printf("输入无效，请输入一个整数");
+        }
+    }
+
+
+    for (int i = n - 1; i >= 0; i--) {
+        printf("%d ", numArr[i]);
+    }
+    printf("\n");
 
 
     return 0;
 }
 
-void printArr(int arr[], int len){
-    for (int i = 0; i < len; i++) {
-        printf("%d\t", arr[i]);
-    }
-    printf("\n");
-}
